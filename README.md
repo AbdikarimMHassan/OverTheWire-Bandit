@@ -29,3 +29,15 @@ Key takeaways
 
 We know the file is in the home directroy. To read the file, we can use the cat command.  However, file has a name '-' which the cat command treats as standard input from the keyboard and not the name of the file. To indicate that it is the liternal name of the file, use **./** which refer to the current directory and the path seperator. This solves the confusion. so the full command is **cat ./-**
 - Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+**Bandit Level 2-3**
+
+**Level Goal**: The password for the next level is stored in a file called –spaces in this filename– located in the home directory
+
+
+As a standard,  ensure to list all the content of the home directory using the **ls** command. There was a directroy called **inhere**. So we cd'd to that directory: cd inhere/ and used ls to inspects its content and noticed that there was nothing there. I though this was probably becuase the file was a hidden file. So we used the -a option with ls to list all files including hidden. This confirmed there was a hidden file named ...Hiding-From-You. 
+
+- Solution: cat ...Hiding-From-You
+- Password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+  
