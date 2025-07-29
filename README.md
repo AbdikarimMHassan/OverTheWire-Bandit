@@ -28,4 +28,4 @@ Key takeaways
 
 
 We know the file is in the home directroy. To read the file, we can use the cat command.  However, file has a name '-' which the cat command treats as standard input from the keyboard and not the name of the file. To indicate that it is the liternal name of the file, use **./** which refer to the current directory and the path seperator. This solves the confusion. so the full command is **cat ./-**
--Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+- Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
