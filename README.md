@@ -20,3 +20,12 @@ Key takeaways
 - Since you start at the home directory, you can inspect its content using the **ls** command which lists the readme file.
 - Use the **cat** command to read the file
 - password: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If              
+
+
+**Bandit Level 1-2**
+
+**Level Goal**: The password for the next level is stored in a file called **-** located in the home directory
+
+
+We know the file is in the home directroy. To read the file, we can use the cat command.  However, file has a name '-' which the cat command treats as standard input from the keyboard and not the name of the file. To indicate that it is the liternal name of the file, use **./** which refer to the current directory and the path seperator. This solves the confusion. so the full command is **cat ./-**
+-Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
