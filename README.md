@@ -3,13 +3,12 @@ This repository contains  my step-by-step guide to solving the first 20 levels i
 This repository documents:
 
 
-The challenges at each level
+**The challenge at each level*
+
+**My solutions and thought process**
 
 
-My solutions
 
-
-Key takeaways
 
 **Bandit Level 0-1**
 
