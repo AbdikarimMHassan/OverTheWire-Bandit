@@ -117,7 +117,7 @@ We used the strings command to extract human-readable text and filtered the resu
 
 - Solution: strings data.txt | grep ===
 
-- Password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+- Password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
 **Bandit Level 10-11**
 
@@ -127,7 +127,7 @@ The data was base64 encoded, so we decoded it using the base64 command with the 
 
 - Solution: base64 -d data.txt
 
-- Password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+- Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
 **Bandit Level 11-12**
 
@@ -137,7 +137,7 @@ This is a ROT13 cipher. We used the tr command to rotate the letters.
 
 - Solution: cat data.txt | tr A-Za-z N-ZA-Mn-za-m
 
-- Password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+- Password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 
 **Bandit Level 12-13**
 
@@ -147,7 +147,7 @@ We created a working directory in /tmp, reversed the hex with xxd -r, and used f
 
 **Solution:** Followed multiple decompression steps using xxd, gunzip, bunzip2, and tar
 
-- Password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+- Password: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
 - Bandit Level 13-14
 
