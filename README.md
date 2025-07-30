@@ -79,6 +79,8 @@ Similar to level 5, this file has some attributes we can use to narrow it down. 
 
 - Solution: find / -user bandit7 -group bandit6 -size 33c 2>/dev/null. cat /var/lib/dbkg/info/bandit7.password
 - Password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+- 
 **Bandit Level 7-8**
 
   
