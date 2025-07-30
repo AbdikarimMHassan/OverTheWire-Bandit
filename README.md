@@ -78,6 +78,8 @@ Similar to level 5, this file has some attributes we can use to narrow it down. 
 - Solution: find / -user bandit7 -group bandit6 -size 33c 2>/dev/null. cat /var/lib/dbkg/info/bandit7.password
 - Password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 **Bandit Level 7-8**
+
+  
 **Level Goal**: The password for the next level is stored in the file data.txt next to the word millionth
 
 The hint already indicates this is a text search and i was already thinking of the grep command. So as usual we listed the directory content which contained data.txt file. So we simply searched the word millionth within the file using grep command.
@@ -86,6 +88,8 @@ The hint already indicates this is a text search and i was already thinking of t
 - Password: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 
   **Bandit Level 8-9**
+
+  
   **Level Goal**: The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 
 This hint indicates a sorting and identifying command that eliminates duplicates. So a combination or either of uniq and sort command.
