@@ -48,8 +48,9 @@ As a standard,  ensure to list all the content of the home directory using the *
   **Level Goal**: The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
 Since the file is in the inhere directory, we switched to that directroy using cd inhere/. To list the file type, the command is 'file'. To list all the file type in the directroy, we simply use /* so File /*
+The human readabfile file was ./-file07
 
-- Solution: file /*
+- Solution: file /* ,  cat ./-file07
 - Password:4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
     **Bandit Level 4-5**
