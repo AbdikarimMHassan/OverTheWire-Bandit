@@ -73,7 +73,39 @@ The human readabfile file was ./-file07
   - Password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
  **Bandit Level 6-7**
- **Level Goal**:
+ **Level Goal**: The password for the next level is stored somewhere on the server and has all of the following properties: owned by user bandit7, owned by group bandit6, 33 bytes in size.
+Similar to level 5, this file has some attributes we can use to narrow it down. This already indicated to me we would likely need to use the find command. Since the hint indicates somewhere in the server and not the current directory, we need to use the /. We tried: find / -user bandit7 -group bandit6 -size 33c. But this produced a denied error. To supress this we need to use: 2>/dev/null.
+
+- Solution: find / -user bandit7 -group bandit6 -size 33c 2>/dev/null. cat /var/lib/dbkg/info/bandit7.password
+- Password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+**Bandit Level 7-8**
+**Level Goal**: The password for the next level is stored in the file data.txt next to the word millionth
+
+The hint already indicates this is a text search and i was already thinking of the grep command. So as usual we listed the directory content which contained data.txt file. So we simply searched the word millionth within the file using grep command.
+
+- Solution: grep millionth data.txt
+- Password: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+  **Bandit Level 8-9**
+  **Level Goal**: The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+This hint indicates a sorting and identifying command that eliminates duplicates. So a combination or either of uniq and sort command.
+
+Sort - is line-based and it sorts lines of text in alphabetical order. Since its in alphabetical order, duplicates are next to each other.
+
+
+Unique - remove duplicates when the duplicates are adjacent. So if the duplicate is directly above or below. If there is something unique in between, it doesn't recognise. Combine with -u  to remove all lines that have adjacent duplicates and doesnt leave any out. 
+
+So we combine with sort for a truly unique line: sort data.txt | unique - u
+
+- Solution:  sort data.txt | unique - u
+- Password: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+  
+
+
+  
+
+ 
 
 
 
