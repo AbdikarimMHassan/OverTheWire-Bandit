@@ -107,7 +107,125 @@ So we combine with sort for a truly unique line: sort data.txt | unique - u
 
 - Solution:  sort data.txt | unique - u
 - Password: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
-  
+
+
+  Bandit Level 9-10
+
+Level Goal: The password for the next level is stored in the file data.txt in one of the few human-readable strings, beginning with several ‘=’ characters.
+
+We used the strings command to extract human-readable text and filtered the result with grep.
+
+Solution: strings data.txt | grep ===
+
+Password: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+Bandit Level 10-11
+
+Level Goal: The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+The data was base64 encoded, so we decoded it using the base64 command with the -d option.
+
+Solution: base64 -d data.txt
+
+Password: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+Bandit Level 11-12
+
+Level Goal: The password for the next level is stored in the file data.txt, where all lowercase and uppercase letters have been rotated by 13 positions.
+
+This is a ROT13 cipher. We used the tr command to rotate the letters.
+
+Solution: cat data.txt | tr A-Za-z N-ZA-Mn-za-m
+
+Password: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+Bandit Level 12-13
+
+Level Goal: The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.
+
+We created a working directory in /tmp, reversed the hex with xxd -r, and used file to identify compression types. Then, we used a combination of mv, gunzip, bunzip2, and tar to repeatedly decompress the file.
+
+Solution: Followed multiple decompression steps using xxd, gunzip, bunzip2, and tar
+
+Password: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+Bandit Level 13-14
+
+Level Goal: The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14.
+
+We were given a private SSH key to log in as bandit14.
+
+Solution: ssh -i sshkey.private bandit14@localhost
+
+Password: (accessed in session, not printed)
+
+Bandit Level 14-15
+
+Level Goal: The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+We used telnet to connect to the port and entered the current level's password.
+
+Solution: telnet localhost 30000, then input 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+
+Password: BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+Bandit Level 15-16
+
+Level Goal: The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
+
+We used the openssl s_client command to communicate with the SSL port and entered the password.
+
+Solution: openssl s_client -connect localhost:30001, then input BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+Password: cluFn7wTiGryunymYOu4RcffSxQluehd
+
+Bandit Level 16-17
+
+Level Goal: The credentials for the next level can be retrieved by submitting the password to a port between 31000 and 32000. Only one server will return the next credentials.
+
+We used nmap to find open ports, then tested each one with openssl s_client. One of them returned a private key, which we saved, gave permissions, and used to login.
+
+Solution:
+
+nmap -p 31000-32000 localhost
+
+openssl s_client -connect localhost:<correct_port>
+
+chmod 400 keyfile
+
+ssh -i keyfile bandit17@localhost
+
+Password: (accessed after login)
+
+Bandit Level 17-18
+
+Level Goal: The password for the next level is in passwords.new and is the only line that differs from passwords.old.
+
+We used the diff command to compare both files and extract the changed line.
+
+Solution: diff passwords.old passwords.new
+
+Password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+Bandit Level 18-19
+
+Level Goal: The password is stored in a readme file in the home directory, but .bashrc logs you out immediately after login.
+
+We bypassed the login script by forcing a shell using the -t /bin/sh option.
+
+Solution: ssh bandit18@bandit.labs.overthewire.org -p 2220 -t /bin/sh, then cat readme
+
+Password: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+Bandit Level 19-20
+
+Level Goal: A setuid binary is in the home directory. Run it to access the password for the next level.
+
+We used the setuid binary to act as bandit20 and read the password file.
+
+Solution: ./bandit20-do cat /etc/bandit_pass/bandit20
+
+Password: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 
   
