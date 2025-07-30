@@ -35,8 +35,9 @@ We know the file is in the home directroy. To read the file, we can use the cat 
   
 I noticed this is similar to the level 1-2 level goal but with spaces in the filename. We used ls to list directory content. There was a file named --spaces in this filename--.
 Since the file start with a dash and has spaces. we can do the same solution but with quotes around the full filename.
--Solution: cat ./"--spaces in this filename'
-Password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+- Solution: cat ./"--spaces in this filename'
+
+- Password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 
 
 
